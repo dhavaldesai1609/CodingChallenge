@@ -1,0 +1,85 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-01-29T23:19:49.164Z",
+    "end": "2021-01-29T23:20:12.014Z",
+    "duration": 22850,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c07cb114-74bd-4524-be9d-dbcf3954e38f",
+      "title": "",
+      "fullFile": "cypress\\integration\\tracktik\\amazonSample.js",
+      "file": "cypress\\integration\\tracktik\\amazonSample.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Validate elements on the landing page",
+          "fullTitle": "Validate elements on the landing page",
+          "timedOut": null,
+          "duration": 18606,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "var url = 'https://www.amazon.ca//';\nvar amazonLogo = '#nav-logo-sprites'; //Visit Amazon.ca\ncy.visit(url); //Amazon Logo should be displayed\ncy.get(amazonLogo).should('be.visible'); //Search bar should be displayed\ncy.get('#nav-search').should('be.visible').click(); //Country/Location flag should be displayed\ncy.get('.icp-nav-flag').should('be.visible'); //Hello message should be displayed\ncy.get('#nav-global-location-popover-link').should('be.visible'); //Accounts text should be displayed\ncy.get('#nav-link-accountList').should('be.visible'); //Orders and returns\ncy.get('#nav-orders').should('be.visible'); //Shopping Cart Icon\ncy.get('.nav-cart-icon').should('be.visible'); // All Menu Bar\ncy.get('#nav-hamburger-menu').should('be.visible'); //BestSellers\ncy.get('[href=\"/Best-Sellers-generic/zgbs/?ref_=nav_cs_bestsellers_63ca45fd42734a1a90e55e964c1a4be0\"]').should('be.visible'); //Gift Ideas\ncy.get('[href=\"/gcx/-/gfhz/?ref_=nav_cs_giftfinder_192be93f79264d46933b55cd454cfadf\"]').should('be.visible'); //Prime\ncy.get('#nav-link-prime > :nth-child(1)').should('be.visible'); //New Releases\ncy.get('[href=\"/gp/new-releases/?ref_=nav_cs_newreleases_3700f09c268c435e83b755749c4fc4e9\"]').should('be.visible'); //Customer Service\ncy.get('[href=\"/gp/help/customer/display.html?ref_=nav_cs_help_91eafdc699444f9c9ab412df262cc693\"]').should('be.visible'); //Slider\ncy.get('.cropped-image-map-size > .cropped-image-map-center-alignment > span > .a-link-normal > img').should('be.visible'); //Search for a particular item\ncy.get('#nav-search').type('Apple'); //Click on Account to sign in\ncy.get('#nav-link-accountList').click(); //Verify amazon logo is visible\ncy.get('.a-icon-logo').should('be.visible'); //Verify sign in page is visible\ncy.get('.a-padding-extra-large').should('be.visible'); //Verify username field is visible\ncy.get('#ap_email').should('be.visible'); //Verify username field is editable\ncy.get('#ap_email').should('be.enabled'); //verify create account button is visible\ncy.get('#createAccountSubmit').should('be.visible'); //verify continue button is visible\ncy.get('.a-button-inner > #continue').should('be.visible').click(); //Enter Username\ncy.get('#ap_email').type('dhavaldesai1609@gmail.com'); //Click on continue button\ncy.get('.a-button-inner > #continue').should('be.visible').click(); //Verify username field is visible\ncy.get('#ap_password').should('be.visible'); //Verify username field is editable\ncy.get('#ap_password').should('be.enabled'); //Enter Password\ncy.get('#ap_password').type('neverShareYourPassword@123'); //Verify sign in button\ncy.get('#signInSubmit').should('be.visible'); //Click on sign in button\ncy.get('#signInSubmit').click();",
+          "err": {},
+          "uuid": "61cb624f-4600-4ea6-bf7f-e52fdaa9d4b3",
+          "parentUUID": "c07cb114-74bd-4524-be9d-dbcf3954e38f",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "61cb624f-4600-4ea6-bf7f-e52fdaa9d4b3"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 18606,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

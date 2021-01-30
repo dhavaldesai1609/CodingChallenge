@@ -1,0 +1,89 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-01-29T23:21:13.024Z",
+    "end": "2021-01-29T23:21:29.117Z",
+    "duration": 16093,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d2454cab-ba00-4ef7-9cc2-14daa175c7a0",
+      "title": "",
+      "fullFile": "cypress\\integration\\tracktik\\Zensurance Test 3.txt",
+      "file": "cypress\\integration\\tracktik\\Zensurance Test 3.txt",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "A user enters an invalid email address, and the user is unable to proceed to the next page",
+          "fullTitle": "A user enters an invalid email address, and the user is unable to proceed to the next page",
+          "timedOut": null,
+          "duration": 12182,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "{\n  \"title\": \"Failed screenshot\",\n  \"value\": \"screenshots\\\\tracktik\\\\Zensurance Test 3.txt\\\\A user enters an invalid email address, and the user is unable to proceed to the next page (failed).png\"\n}",
+          "code": "//Visit the Demo QA Website\ncy.visit(\"https://app.zensurance.com/quote\");\n\n//Enter the search criteria for the field 'Industry' as cons\ncy.get('.sc-hMqMXs').type('cons');\n//Ensure that the item Construction contractors is displayed in search result\ncy.get('#main-content').find('ul').contains('Construction contractors');\n//Ensure that the item General Contractor, Subcontractor is displayed in search result\ncy.get('#main-content').find('ul').contains('General Contractor, Subcontractor');\n//Click on the first search result\ncy.get('#main-content').find('ul').contains('Construction contractors').click();\n\n// Select $70000 from the Revenue Slider\ncy.get('[style=\"left: 18.3673%; background-color: rgb(255, 255, 255); border: 0px; bottom: -6px;\"]').click();\n\n//Assert text value displayed on slider. \ncy.get('#hook-revenueLastFinancialYear > .px-5').should('contain.text', '$70,000');\n//Select No for Was all your Gross Revenue from Canada? \ncy.get('[for=\"revenueLastFinancialYearFromCanadano\"] > .sc-kgoBCf').click();\n//Select 40% for Canada\ncy.get(':nth-child(4) > .px-5 > .rc-slider > .rc-slider-step > [style=\"left: 40%; background-color: rgb(255, 255, 255); border: 0px; bottom: -6px;\"]').click();\n\n//Select 30% for USA\ncy.get(':nth-child(5) > .px-5 > .rc-slider > .rc-slider-step > [style=\"left: 30%; background-color: rgb(255, 255, 255); border: 0px; bottom: -6px;\"]').click();\n\n//Select 30% Western Europe\ncy.get(':nth-child(6) > .px-5 > .rc-slider > .rc-slider-step > [style=\"left: 30%; background-color: rgb(255, 255, 255); border: 0px; bottom: -6px;\"]').click();\n//Select 10% for Other\ncy.get(':nth-child(7) > .px-5 > .rc-slider > .rc-slider-step > [style=\"left: 10%; background-color: rgb(255, 255, 255); border: 0px; bottom: -6px;\"]').click();\n//Click on the next button\ncy.get('[data-testid=next-button]').click();\n//Ensure that the error message 'Total must equal 100%' is displayed\ncy.get('.mt-3 > :nth-child(1) > .frame-me').should('have.text','Total must equal 100%')\n//Ensure that the total is greater than 100%\ncy.get('.Text-LG').should('have.text','110%');\n//Ensure that the error message 'There are a few errors above' is displayed\ncy.get('[data-comp=error-wrapper]').should('have.text','There are a few errors above')",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.sc-hMqMXs`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.sc-hMqMXs`, but never found it.\n    at Context.eval (https://app.zensurance.com/__cypress/tests?p=cypress\\integration\\tracktik\\Zensurance%20Test%203.txt:104:8)",
+            "diff": null
+          },
+          "uuid": "cf72f024-9908-4dc2-9bdf-3c366613bae4",
+          "parentUUID": "d2454cab-ba00-4ef7-9cc2-14daa175c7a0",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "cf72f024-9908-4dc2-9bdf-3c366613bae4"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 12182,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

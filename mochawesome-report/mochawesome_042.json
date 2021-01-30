@@ -1,0 +1,89 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-01-29T23:32:41.633Z",
+    "end": "2021-01-29T23:32:58.373Z",
+    "duration": 16740,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "abb27b36-e73d-4b69-888e-38a9ed0a26a1",
+      "title": "",
+      "fullFile": "cypress\\integration\\tracktik\\Zensurance Test 1.js",
+      "file": "cypress\\integration\\tracktik\\Zensurance Test 1.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Check unrecognized industry in search results in error message",
+          "fullTitle": "Check unrecognized industry in search results in error message",
+          "timedOut": null,
+          "duration": 12668,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "{\n  \"title\": \"Failed screenshot\",\n  \"value\": \"screenshots\\\\tracktik\\\\Zensurance Test 1.js\\\\Check unrecognized industry in search results in error message (failed).png\"\n}",
+          "code": "//Visit the Demo QA Website\ncy.visit(\"https://app.zensurance.com/quote\"); //Enter the search criteria for the field 'Industry'\ncy.get('.sc-hMqMXs').type('faw'); //Verify that there are no search results except the error message\ncy.get('.pin-b > .text-base').should('have.length', 1); //Click on the next button\ncy.get('[data-testid=next-button]').click(); //Ensure that the error message 'Please select an industry' is displayed\ncy.get('.text-xs').should('have.text', 'Please select an industry'); //Ensure that the error message 'There are a few errors above' is displayed\ncy.get('[id=qid-101801]').should('have.text', 'There are a few errors above');",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.sc-hMqMXs`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.sc-hMqMXs`, but never found it.\n    at Context.eval (https://app.zensurance.com/__cypress/tests?p=cypress\\integration\\tracktik\\Zensurance%20Test%201.js:104:6)",
+            "diff": null
+          },
+          "uuid": "0a888459-6ce3-4752-a67c-e442115b57a4",
+          "parentUUID": "abb27b36-e73d-4b69-888e-38a9ed0a26a1",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "0a888459-6ce3-4752-a67c-e442115b57a4"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 12668,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

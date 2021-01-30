@@ -1,0 +1,25 @@
+{
+  "name": "cypress-automation",
+  "version": "1.0.0",
+  "description": "Coding Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+  "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+  },
+  "author": "Dhaval",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.3.1",
+    "cypress-downloadfile": "^1.2.0",
+    "cypress-file-upload": "^4.1.1",
+    "mocha": "^8.2.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "dependencies": {}
+}
