@@ -12,3 +12,6 @@ Alternate way of running the code:
 4) After test suite is completed, run command: npm run create:html:report to generate HTML report
 
 The HTML report will be located in root/TestReport folder.
+
+Reporters Used: mochaawesome
+Dependencies: None
