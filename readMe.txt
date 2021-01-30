@@ -15,3 +15,4 @@ The HTML report will be located in root/TestReport folder.
 
 Reporters Used: mochaawesome
 Dependencies: None
+The code file is located at cypress/integration/tracktik/amazonSample.js
